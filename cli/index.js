@@ -133,6 +133,27 @@ args.command(['d', 'docs', 'h', 'home'], 'Open the npm page of a plugin', (name,
   process.exit(0);
 });
 
+/*
+ * Added self-upgrade command
+ * @tags            : up, upgrade, self-upgrade
+ * @description     : Upgrade current hyper to the new version based on config.updateChannel.
+ */
+args.command(['up', 'upgrade', 'self-upgrade'], 'Upgrade Hyper', (name, args_) => {
+  // TODO Here
+  checkConfig();
+
+  // TODO Step
+  // 1. Check latest version available from github. If can effort to fetch latest version by
+  //    updateChannel, it would be nice.
+  // 2. Ask user want to update or not?
+  // 3. If No, then abort mission. (Exit: 0)
+  // 4. If Yes, then do following step:
+  //    a. Download the lastest version and extract it. (It will download the latest scource code
+  //       based on updateChannel)
+  console.log(args_);
+  process.exit(0);
+});
+
 args.command(['<default>'], 'Launch Hyper');
 
 args.option(['v', 'verbose'], 'Verbose mode', false);
